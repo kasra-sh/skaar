@@ -1,9 +1,0 @@
-[submodule "packages/core"]
-	path = packages/core
-	url = https://github.com/skaar-js/skaar-core.git
-[submodule "packages/http"]
-	path = packages/http
-	url = https://github.com/skaar-js/skaar-http.git
-[submodule "packages/ui"]
-	path = packages/ui
-	url = https://github.com/skaar-js/skaar-ui.git
