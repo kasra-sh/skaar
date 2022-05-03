@@ -7,14 +7,11 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/core/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/packages/http/core" />
       <excludeFolder url="file://$MODULE_DIR$/packages/core/es5" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/core" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/http" />
       <excludeFolder url="file://$MODULE_DIR$/packages/ui/build" />
       <excludeFolder url="file://$MODULE_DIR$/packages/ui/_old" />
       <excludeFolder url="file://$MODULE_DIR$/packages/ui/cjs" />
       <excludeFolder url="file://$MODULE_DIR$/packages/ui/.parcel-cache" />
       <excludeFolder url="file://$MODULE_DIR$/packages/ui/.idea" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/ui" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
