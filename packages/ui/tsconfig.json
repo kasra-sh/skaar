@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "jsx": "preserve",
+    "jsxImportSource": "@skaar/ui",
+    "baseUrl": "./",
+    "paths" : {
+      "@skaar/ui/*": ["./*"]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
