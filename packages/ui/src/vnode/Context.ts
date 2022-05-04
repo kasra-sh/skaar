@@ -1,10 +1,21 @@
-// import {Component, ComponentProps} from "./Component";
-// import {JsObject} from "../../global";
 import {createObjComponent} from "./createComponent";
 
+export function reflect_getParentContextProviderState(ctxRef: any) {
+    let value = undefined
+    let parent = this._parent
+    while (parent) {
+        const parentCtxRef = parent.__contextRef
+        if (parentCtxRef && parentCtxRef === ctxRef) {
+            value = parent.state.value
+            break
+        }
+        parent = parent._parent
+    }
+    return value
+}
 
 export function createContext(defaultValue: any) {
-    const context = {}
+    const currentContextReference = {}
     const providers = []
     const Provider = createObjComponent({
         _name: 'ContextProvider',
@@ -21,7 +32,7 @@ export function createContext(defaultValue: any) {
                 })
             }
         },
-        __context: context,
+        __contextRef: currentContextReference,
         render(props) {
             return props.children
         }
@@ -33,16 +44,7 @@ export function createContext(defaultValue: any) {
         },
 
         render({children}) {
-            let value = undefined
-            let parent = this._parent
-            while (parent) {
-                const parentCtx = parent.__context
-                if (parentCtx && parentCtx === context) {
-                    value = parent.state.value
-                    break
-                }
-                parent = parent._parent
-            }
+            const value = reflect_getParentContextProviderState(currentContextReference)
             children = children || []
             const ch = []
             for (let child of children) {
