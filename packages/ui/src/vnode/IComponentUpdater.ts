@@ -1,6 +1,6 @@
 import {JsObject} from "@skaar/ui/global";
 
-export interface ComponentUpdater {
+export interface IComponentUpdater {
 
     scheduleUpdate(component: any, partialState?: JsObject): void
 

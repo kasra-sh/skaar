@@ -10,7 +10,7 @@ import {createVElement} from "../vnode/createVElement";
 import {globalScope} from "../globalScope";
 import {warnListItemsWithoutKey} from "../debug/warnings";
 import {VNodeContainer} from "../vnode/base/VNodeContainer";
-import {ComponentUpdater} from "@skaar/ui/src/vnode/ComponentUpdater";
+import {IComponentUpdater} from "@skaar/ui/src/vnode/IComponentUpdater";
 import {FnComponent} from "@skaar/ui/src/vnode/FnComponent";
 import {IViewRenderer} from "@skaar/ui/src/view/IViewRenderer";
 
@@ -21,7 +21,7 @@ const requestAnimationFrame = globalScope.requestAnimationFrame
 
 // const enqueueUpdateTask = setTimeout
 
-export class DomRenderer implements IViewRenderer, ComponentUpdater {
+export class DomRenderer implements IViewRenderer, IComponentUpdater {
     viewApi: DomApi
 
     constructor(view: DomApi) {

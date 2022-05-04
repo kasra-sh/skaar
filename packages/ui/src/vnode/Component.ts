@@ -5,7 +5,7 @@ import {JsObject} from "../../global";
 import {VNodeContainer} from "./base/VNodeContainer";
 import {warnRecursiveRender} from "../debug/warnings";
 import {FnComponent} from "./FnComponent";
-import {ComponentUpdater, NoopUpdater} from "@skaar/ui/src/vnode/ComponentUpdater";
+import {IComponentUpdater, NoopUpdater} from "@skaar/ui/src/vnode/IComponentUpdater";
 
 export type ComponentInternal = {
     dirty: boolean,
@@ -27,7 +27,7 @@ export abstract class Component extends VNodeContainer {
     _proto: FunctionConstructor
     _name: string
     __internal: ComponentInternal = {dirty: true, rendering: false}
-    __updater: ComponentUpdater = NoopUpdater
+    __updater: IComponentUpdater = NoopUpdater
 
     onCreate?(): void;
 

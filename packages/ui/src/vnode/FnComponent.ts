@@ -4,7 +4,7 @@ import {normalizeChildNodes} from "./normalizeChildNodes";
 import {transformNodeArray} from "./transformNodeArray";
 import {warnRecursiveRender} from "@skaar/ui/src/debug/warnings";
 import {ComponentInternal, ComponentProps} from "@skaar/ui/src/vnode/Component";
-import {ComponentUpdater, NoopUpdater} from "@skaar/ui/src/vnode/ComponentUpdater";
+import {IComponentUpdater, NoopUpdater} from "@skaar/ui/src/vnode/IComponentUpdater";
 
 export type HookNode = {
     next?: HookNode,
@@ -47,7 +47,7 @@ export class FnComponent extends VNodeContainer {
     hookNode: HookNode
     _name: string
     __internal: ComponentInternal = {dirty: true, rendering: false}
-    __updater: ComponentUpdater = NoopUpdater
+    __updater: IComponentUpdater = NoopUpdater
 
     override _unmount(remove?: boolean): VNode | undefined {
         this.__internal.mounted = false
