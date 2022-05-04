@@ -1,8 +1,8 @@
 import {DomApi} from "@skaar/ui/src/view-dom/DomApi";
-import {Component} from "@skaar/ui/src/vnode/Component";
+import {Component} from "@skaar/ui/src/component/Component";
 import {VElement} from "@skaar/ui/src/vnode/VElement";
 import {VText} from "@skaar/ui/src/vnode/VText";
-import {VNode} from "@skaar/ui/src/vnode/base/VNode";
+import {VNode} from "@skaar/ui/src/vnode/VNode";
 
 export interface IViewRenderer {
     viewApi: DomApi;

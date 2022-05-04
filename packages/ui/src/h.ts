@@ -1,10 +1,10 @@
 import {VElement, VElementProps} from "./vnode/VElement";
-import {VNode} from "./vnode/base/VNode";
+import {VNode} from "./vnode/VNode";
 import {Fragment} from "./vnode/Fragment";
-import {Component, ComponentClass} from "./vnode/Component";
+import {Component, ComponentClass} from "./component/Component";
 import {JsObject} from "../global";
 import {createVElement} from "./vnode/createVElement";
-import {cloneComponent, createComponent} from "./vnode/createComponent";
+import {cloneComponent, createComponent} from "./component/createComponent";
 import {translateJsxProperties} from "./translateJsxProperties";
 
 export function h(type: string, props?: JsObject, children?: (VNode | string | unknown)[]): VElement;

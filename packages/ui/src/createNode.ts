@@ -1,11 +1,11 @@
 import {VElement, VElementProps} from "./vnode/VElement";
-import {VNode} from "./vnode/base/VNode";
+import {VNode} from "./vnode/VNode";
 import {Fragment} from "./vnode/Fragment";
-import {Component, ComponentClass} from "./vnode/Component";
+import {Component, ComponentClass} from "./component/Component";
 import {JsObject} from "../global";
 import {createVElement} from "./vnode/createVElement";
-import {cloneComponent, createComponent} from "./vnode/createComponent";
-import {cloneFnComponent, FnComponent} from "@skaar/ui/src/vnode/FnComponent";
+import {cloneComponent, createComponent} from "./component/createComponent";
+import {cloneFnComponent, FnComponent} from "@skaar/ui/src/component/FnComponent";
 
 export function createNode(type: string, props?: VElementProps, children?: (VNode | string | unknown)[]): VElement;
 export function createNode(type: ComponentClass | Component, props?: JsObject, children?: (VNode | string | unknown)[]): Component;

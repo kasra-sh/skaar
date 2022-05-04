@@ -1,5 +1,5 @@
 import {globalScope} from "../globalScope";
-import {T_CLASS_COMPONENT, T_FN_COMPONENT, VNode} from "../vnode/base/VNode";
+import {T_CLASS_COMPONENT, T_FN_COMPONENT, VNode} from "../vnode/VNode";
 import {List} from "../vnode/List";
 
 const warnedRecursiveRender = []

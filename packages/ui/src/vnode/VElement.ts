@@ -1,5 +1,5 @@
-import {T_ELEMENT, VNode} from "./base/VNode";
-import {VNodeContainer} from "./base/VNodeContainer";
+import {T_ELEMENT, VNode} from "./VNode";
+import {VNodeContainer} from "./VNodeContainer";
 import {normalizeChildNodes} from "./normalizeChildNodes";
 import {transformNodeArray} from "./transformNodeArray";
 import {JsObject} from "../../global";

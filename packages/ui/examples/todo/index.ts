@@ -1,6 +1,6 @@
 import {Component, SkaarDOM} from "@skaar/ui/index";
 import {JsObject} from "@skaar/ui/global";
-import {ComponentProps} from "@skaar/ui/src/vnode/Component";
+import {ComponentProps} from "@skaar/ui/src/component/Component";
 import {h} from "@skaar/ui/src/h";
 import {AddTodo} from "./components/addTodo";
 import {TodoItem} from "./components/todoItem";

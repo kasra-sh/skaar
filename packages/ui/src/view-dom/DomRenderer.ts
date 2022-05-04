@@ -1,6 +1,6 @@
-import {Component} from "../vnode/Component";
+import {Component} from "../component/Component";
 import {VText} from "../vnode/VText";
-import {T_CLASS_COMPONENT, T_ELEMENT, T_FN_COMPONENT, T_FRAGMENT, T_LIST, T_TEXT, VNode} from "../vnode/base/VNode";
+import {T_CLASS_COMPONENT, T_ELEMENT, T_FN_COMPONENT, T_FRAGMENT, T_LIST, T_TEXT, VNode} from "../vnode/VNode";
 import {Fragment} from "../vnode/Fragment";
 import {List} from "../vnode/List";
 import {VElement} from "../vnode/VElement";
@@ -9,9 +9,9 @@ import {JsObject} from "../../global";
 import {createVElement} from "../vnode/createVElement";
 import {globalScope} from "../globalScope";
 import {warnListItemsWithoutKey} from "../debug/warnings";
-import {VNodeContainer} from "../vnode/base/VNodeContainer";
-import {IComponentUpdater} from "@skaar/ui/src/vnode/IComponentUpdater";
-import {FnComponent} from "@skaar/ui/src/vnode/FnComponent";
+import {VNodeContainer} from "../vnode/VNodeContainer";
+import {IComponentUpdater} from "@skaar/ui/src/component/IComponentUpdater";
+import {FnComponent} from "@skaar/ui/src/component/FnComponent";
 import {IViewRenderer} from "@skaar/ui/src/view/IViewRenderer";
 
 // const hasRAF = typeof globalScope.requestAnimationFrame === "function";

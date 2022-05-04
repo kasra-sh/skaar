@@ -1,10 +1,10 @@
-import {VNodeContainer} from "./base/VNodeContainer";
-import {T_FN_COMPONENT, VNode} from "./base/VNode";
-import {normalizeChildNodes} from "./normalizeChildNodes";
-import {transformNodeArray} from "./transformNodeArray";
+import {VNodeContainer} from "../vnode/VNodeContainer";
+import {T_FN_COMPONENT, VNode} from "../vnode/VNode";
+import {normalizeChildNodes} from "../vnode/normalizeChildNodes";
+import {transformNodeArray} from "../vnode/transformNodeArray";
 import {warnRecursiveRender} from "@skaar/ui/src/debug/warnings";
-import {ComponentInternal, ComponentProps} from "@skaar/ui/src/vnode/Component";
-import {IComponentUpdater, NoopUpdater} from "@skaar/ui/src/vnode/IComponentUpdater";
+import {ComponentInternal, ComponentProps} from "@skaar/ui/src/component/Component";
+import {IComponentUpdater, NoopUpdater} from "@skaar/ui/src/component/IComponentUpdater";
 
 export type HookNode = {
     next?: HookNode,

@@ -1,4 +1,4 @@
-import {T_TEXT, VNode} from "./base/VNode";
+import {T_TEXT, VNode} from "./VNode";
 
 export class VText extends VNode {
     override _type = T_TEXT

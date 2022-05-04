@@ -1,9 +1,9 @@
 import {createNode} from "./src/createNode.js"
 import {VElement, VElementProps} from "./src/vnode/VElement";
-import {VNode} from "./src/vnode/base/VNode";
-import {Component, ComponentClass} from "./src/vnode/Component";
+import {VNode} from "./src/vnode/VNode";
+import {Component, ComponentClass} from "./src/component/Component";
 import {JsObject} from "./global";
-import {createComponent} from "./src/vnode/createComponent";
+import {createComponent} from "./src/component/createComponent";
 import {Fragment} from "./src/vnode/Fragment";
 import {createVElement} from "./src/vnode/createVElement";
 import {translateJsxProperties} from "./src/translateJsxProperties";

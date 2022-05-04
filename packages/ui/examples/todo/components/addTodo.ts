@@ -1,4 +1,4 @@
-import {Component, ComponentProps} from "@skaar/ui/src/vnode/Component";
+import {Component, ComponentProps} from "@skaar/ui/src/component/Component";
 import {JsObject} from "@skaar/ui/global";
 import {_a_, _input_} from "@skaar/ui/h-tags";
 

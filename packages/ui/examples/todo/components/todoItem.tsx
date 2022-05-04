@@ -1,4 +1,4 @@
-import {Component, ComponentProps} from "@skaar/ui/src/vnode/Component";
+import {Component, ComponentProps} from "@skaar/ui/src/component/Component";
 
 export class TodoItem extends Component {
     props = {

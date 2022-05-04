@@ -1,11 +1,11 @@
-import {T_CLASS_COMPONENT, VNode} from "./base/VNode";
-import {transformNodeArray} from "./transformNodeArray";
-import {normalizeChildNodes} from "./normalizeChildNodes";
+import {T_CLASS_COMPONENT, VNode} from "../vnode/VNode";
+import {transformNodeArray} from "../vnode/transformNodeArray";
+import {normalizeChildNodes} from "../vnode/normalizeChildNodes";
 import {JsObject} from "../../global";
-import {VNodeContainer} from "./base/VNodeContainer";
+import {VNodeContainer} from "../vnode/VNodeContainer";
 import {warnRecursiveRender} from "../debug/warnings";
 import {FnComponent} from "./FnComponent";
-import {IComponentUpdater, NoopUpdater} from "@skaar/ui/src/vnode/IComponentUpdater";
+import {IComponentUpdater, NoopUpdater} from "@skaar/ui/src/component/IComponentUpdater";
 
 export type ComponentInternal = {
     dirty: boolean,

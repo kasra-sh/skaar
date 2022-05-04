@@ -1,5 +1,5 @@
 import {createNode, SkaarDOM} from "@skaar/ui/index";
-import {useEffect, useState} from "@skaar/ui/src/vnode/Hooks";
+import {useEffect, useState} from "@skaar/ui/src/component/Hooks";
 
 const UpdateCounter = () => {
     const [count, setCount] = useState(0);

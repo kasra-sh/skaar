@@ -1,4 +1,4 @@
-import {Component} from "../src/vnode/Component";
+import {Component} from "../src/component/Component";
 
 class SomeName extends Component {
     render(props: any): any {

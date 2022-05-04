@@ -1,5 +1,5 @@
-import {VNodeContainer} from "./base/VNodeContainer";
-import {VNode} from "./base/VNode";
+import {VNodeContainer} from "./VNodeContainer";
+import {VNode} from "./VNode";
 import {transformNodeArray} from "./transformNodeArray";
 import {VText} from "./VText";
 

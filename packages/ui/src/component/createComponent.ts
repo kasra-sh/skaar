@@ -1,6 +1,6 @@
 import {Component, ComponentClass, ComponentProps} from "./Component";
 import {JsObject} from "../../global";
-import {VNode} from "./base/VNode";
+import {VNode} from "../vnode/VNode";
 import {FnComponent} from "./FnComponent";
 
 export function createComponent(component: ComponentClass, props: JsObject, children?: (VNode | string | unknown)[]): Component {

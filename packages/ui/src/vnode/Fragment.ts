@@ -1,5 +1,5 @@
-import {VNodeContainer} from "./base/VNodeContainer";
-import {T_FRAGMENT, VNode} from "./base/VNode";
+import {VNodeContainer} from "./VNodeContainer";
+import {T_FRAGMENT, VNode} from "./VNode";
 import {normalizeChildNodes} from "./normalizeChildNodes";
 import {transformNodeArray} from "./transformNodeArray";
 

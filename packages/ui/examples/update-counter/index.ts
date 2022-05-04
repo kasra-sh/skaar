@@ -1,6 +1,6 @@
 import {Component, createNode, SkaarDOM} from "../../index";
 import {JsObject} from "../../global";
-import {ComponentProps} from "../../src/vnode/Component";
+import {ComponentProps} from "../../src/component/Component";
 
 class UpdateCounter extends Component {
     state = {
