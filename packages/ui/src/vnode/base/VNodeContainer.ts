@@ -1,5 +1,5 @@
 import {VNode} from "./VNode";
-import {IViewNode} from "../../view/View";
+import {IViewNode} from "@skaar/ui/src/view/NodeTypes";
 
 export abstract class VNodeContainer extends VNode {
     _childNodes: VNode[]

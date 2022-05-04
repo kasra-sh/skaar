@@ -1,5 +1,5 @@
-import {DomRenderer} from "./src/view/dom-view/DomRenderer";
-import {DomApi} from "./src/view/dom-view/DomApi";
+import {DomRenderer} from "./src/view-dom/DomRenderer";
+import {DomApi} from "./src/view-dom/DomApi";
 
 export * from './src/createNode'
 export {Component} from './src/vnode/Component'

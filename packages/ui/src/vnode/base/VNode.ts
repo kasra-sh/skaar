@@ -1,4 +1,4 @@
-import {IViewNode} from "../../view/View";
+import {IViewNode} from "@skaar/ui/src/view/NodeTypes";
 
 export const T_TEXT = 10
 export const T_ELEMENT = 20

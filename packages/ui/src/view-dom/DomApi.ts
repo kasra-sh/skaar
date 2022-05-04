@@ -1,4 +1,5 @@
-import {IViewApi, IViewNodeFactory} from "../View";
+import {IViewApi} from "../view/IViewApi";
+import {IViewNodeFactory} from "@skaar/ui/src/view/IViewNodeFactory";
 
 export class DomApi implements IViewApi<Text, HTMLElement> {
     private viewNodeFactory: IViewNodeFactory<Text, HTMLElement>

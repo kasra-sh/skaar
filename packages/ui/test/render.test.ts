@@ -1,6 +1,6 @@
-import {DomRenderer} from "../src/view/dom-view/DomRenderer";
+import {DomRenderer} from "../src/view-dom/DomRenderer";
 import {createNode} from "../src/createNode";
-import {DomApi} from "../src/view/dom-view/DomApi";
+import {DomApi} from "../src/view-dom/DomApi";
 
 const {JSDOM} = require("jsdom");
 const window = new JSDOM().window;
