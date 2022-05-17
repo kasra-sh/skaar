@@ -32,7 +32,7 @@ export class VElement extends VNodeContainer {
     }
 
     props: VElementProps
-    _childNodes: any
+    declare _childNodes: any
 
     _tag: string
 

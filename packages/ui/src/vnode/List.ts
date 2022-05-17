@@ -6,7 +6,7 @@ import {transformNodeArray} from "./transformNodeArray";
 export class List extends VNodeContainer {
     props?: undefined;
     _type = T_LIST
-    _childNodes: VNode[]
+    declare _childNodes: VNode[]
     override _viewNode: never
 
     everyChildHasKeyProp() {
