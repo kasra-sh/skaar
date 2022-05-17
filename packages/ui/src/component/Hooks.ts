@@ -58,12 +58,10 @@ type UseEffectState = {
     deps?: Array<any>
 }
 
-function depsEqual(newDeps: Array<any>, oldDeps?: Array<any>) {
-    let changed = false
+function depsEqual(newDeps: Array<any>, oldDeps?: Array<any>): boolean {
+    let changed = true
     if (oldDeps) {
-        if (newDeps.length !== oldDeps.length) {
-            changed = false
-        } else {
+        if (newDeps.length === oldDeps.length) {
             changed = false
             for (let i = 0; i < newDeps.length; i++) {
                 if (!Object.is(newDeps[i],oldDeps[i])) {
