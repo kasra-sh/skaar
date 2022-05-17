@@ -1,5 +1,5 @@
-import {DomRenderer} from "@skaar/ui/src/view-dom/DomRenderer";
-import {DomApi} from "@skaar/ui/src/view-dom/DomApi";
+import {DomRenderer} from "src/view-dom/DomRenderer";
+import {DomApi} from "src/view-dom/DomApi";
 import {JSDOM} from "jsdom"
 
 const mockTemplate = `<html lang="en"><head><title>Skaar UI JSDOM</title></head><body></body></html>`
