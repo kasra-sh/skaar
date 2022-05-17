@@ -53,30 +53,36 @@ export function useState<T>(initialValue?: T): UseStateTuple<T> {
 
 export type EffectFn = () => (Function | void)
 
-type UseEffectState ={
+type UseEffectState = {
     cleanup?: Function,
     deps?: Array<any>
 }
+
+function depsEqual(newDeps: Array<any>, oldDeps?: Array<any>) {
+    let changed = false
+    if (oldDeps) {
+        if (newDeps.length !== oldDeps.length) {
+            changed = false
+        } else {
+            changed = false
+            for (let i = 0; i < newDeps.length; i++) {
+                if (!Object.is(newDeps[i],oldDeps[i])) {
+                    changed = true
+                    break
+                }
+            }
+        }
+    }
+    return !changed;
+}
+
 export function useEffect(effect: EffectFn, deps?: Array<any>) {
     const currentComponent = FncContext.current.component
     const [state, setState] = useState<UseEffectState>({cleanup: undefined, deps: undefined})
     if (state.cleanup) {
         state.cleanup()
     }
-    let shouldRun = true
-    if (state.deps) {
-        if (deps.length !== state.deps.length) {
-            shouldRun = false
-        } else {
-            shouldRun = false
-            for (let i = 0; i < deps.length; i++) {
-                if (deps[i] !== state.deps[i]) {
-                    shouldRun = true
-                    break
-                }
-            }
-        }
-    }
+    let shouldRun = !depsEqual(deps, state.deps);
     let cleanup: any
     if (shouldRun) {
         cleanup = effect()
@@ -85,6 +91,33 @@ export function useEffect(effect: EffectFn, deps?: Array<any>) {
             currentComponent._cleaners.push(cleanup)
     }
     setState({deps, cleanup})
+}
+
+type UseMemoState<T> = {memoizedValue?: T, deps?: Array<any>}
+
+/**
+ * Generates new value using the supplied factory, when at least one of the supplied dependencies has changed
+ */
+export function useMemo<T>(factory: ()=>T, deps?: Array<any>): T {
+    const [state, setState] = useState<UseMemoState<T>>({memoizedValue: undefined, deps: undefined})
+
+    let shouldRun = !depsEqual(deps, state.deps);
+
+    let value = state.memoizedValue
+    if (shouldRun) {
+        value = factory()
+    }
+
+    setState({deps, memoizedValue: value})
+
+    return value
+}
+
+/**
+ * Keeps reference equality of the given callback
+ */
+export function useCallback<T>(factory: ()=>()=>T, deps?: Array<any>): ()=>T {
+    return useMemo<()=>T>(()=>factory(), deps)
 }
 
 /**
