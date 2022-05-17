@@ -386,6 +386,7 @@ export class DomRenderer implements IViewRenderer, IComponentUpdater {
      */
     updateQueue = Array<{ partialState: JsObject, component: Component | FnComponent, mergeCount: number }>()
     isUpdating = false
+    isDisposed = false
     timeout = 15
 
     applyUpdates(callback) {
@@ -396,7 +397,7 @@ export class DomRenderer implements IViewRenderer, IComponentUpdater {
         let reSchedule = false
         let elapsed
         if (count > 0) {
-            while (update = this.updateQueue.shift()) {
+            while (!this.isDisposed && (update = this.updateQueue.shift())) {
                 this.updateNow(update.component, update.partialState)
                 updatedCount++
                 elapsed = Date.now() - updateStart
@@ -474,4 +475,8 @@ export class DomRenderer implements IViewRenderer, IComponentUpdater {
         this.viewApi.append(viewNode, rendered)
     }
 
+    dispose() {
+        this.updateQueue = []
+        this.isDisposed = true
+    }
 }
