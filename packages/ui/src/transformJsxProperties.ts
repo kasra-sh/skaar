@@ -1,4 +1,4 @@
-export function translateJsxProperties(props: any) {
+export function transformJsxProperties(props: any) {
     const attrs: any = {}
     const events: any = {}
     for (let pk in props) {
