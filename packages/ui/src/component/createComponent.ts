@@ -51,3 +51,17 @@ export function createFnComponent(renderFunction: Function, props: JsObject, chi
     // instance._setProps(props)
     return instance
 }
+
+export function cloneFnComponent(fn: Function, props, children) {
+    if (!fn['_createInstance']) {
+        const proto = fn['_proto'] = new FnComponent(fn)
+        fn['_createInstance'] = function () {
+            const instance = Object.assign({}, proto)
+            Object.setPrototypeOf(instance, Object.getPrototypeOf(proto))
+            instance.props = {...props, children}
+            instance.hookNode = undefined
+            return instance
+        }
+    }
+    return fn['_createInstance']()
+}
