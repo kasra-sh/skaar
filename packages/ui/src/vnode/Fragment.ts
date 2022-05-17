@@ -6,7 +6,7 @@ import {transformNodeArray} from "./transformNodeArray";
 export class Fragment extends VNodeContainer {
     props?: any;
     _type = T_FRAGMENT
-    _childNodes: VNode[]
+    declare _childNodes: VNode[]
     override _viewNode: never
 
     constructor(nodes?: (VNode | string | unknown)[]) {

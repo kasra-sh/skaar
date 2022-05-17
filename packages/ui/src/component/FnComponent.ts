@@ -2,9 +2,9 @@ import {VNodeContainer} from "../vnode/VNodeContainer";
 import {T_FN_COMPONENT, VNode} from "../vnode/VNode";
 import {normalizeChildNodes} from "../vnode/normalizeChildNodes";
 import {transformNodeArray} from "../vnode/transformNodeArray";
-import {warnRecursiveRender} from "@skaar/ui/src/debug/warnings";
-import {ComponentInternal, ComponentProps} from "@skaar/ui/src/component/Component";
-import {IComponentUpdater, NoopUpdater} from "@skaar/ui/src/component/IComponentUpdater";
+import {warnRecursiveRender} from "../debug/warnings";
+import {ComponentInternal, ComponentProps} from "./Component";
+import {IComponentUpdater, NoopUpdater} from "./IComponentUpdater";
 
 export type HookNode = {
     next?: HookNode,
@@ -40,7 +40,7 @@ export const FncContext: FunctionalComponentContext = {
 export class FnComponent extends VNodeContainer {
     override _type = T_FN_COMPONENT
     override _viewNode: never
-    override _childNodes: any
+    declare _childNodes: any
     override props: ComponentProps
 
     renderFunction: Function

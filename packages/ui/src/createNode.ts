@@ -5,7 +5,7 @@ import {Component, ComponentClass} from "./component/Component";
 import {JsObject} from "../global";
 import {createVElement} from "./vnode/createVElement";
 import {cloneComponent, createComponent} from "./component/createComponent";
-import {cloneFnComponent, FnComponent} from "@skaar/ui/src/component/FnComponent";
+import {cloneFnComponent, FnComponent} from "./component/FnComponent";
 
 export function createNode(type: string, props?: VElementProps, children?: (VNode | string | unknown)[]): VElement;
 export function createNode(type: ComponentClass | Component, props?: JsObject, children?: (VNode | string | unknown)[]): Component;

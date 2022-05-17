@@ -5,7 +5,7 @@ import {JsObject} from "../../global";
 import {VNodeContainer} from "../vnode/VNodeContainer";
 import {warnRecursiveRender} from "../debug/warnings";
 import {FnComponent} from "./FnComponent";
-import {IComponentUpdater, NoopUpdater} from "@skaar/ui/src/component/IComponentUpdater";
+import {IComponentUpdater, NoopUpdater} from "./IComponentUpdater";
 
 export type ComponentInternal = {
     dirty: boolean,
@@ -20,7 +20,7 @@ export type ComponentProps = { children?: any[] } & JsObject;
 export abstract class Component extends VNodeContainer {
     override _type = T_CLASS_COMPONENT
     override _viewNode: never
-    override _childNodes: any
+    declare _childNodes: any
     override props: ComponentProps
     public state: JsObject
 
