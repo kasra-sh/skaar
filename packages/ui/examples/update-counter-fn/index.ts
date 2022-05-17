@@ -1,5 +1,6 @@
-import {createNode, SkaarDOM} from "@skaar/ui/index";
-import {useEffect, useState} from "@skaar/ui/src/component/Hooks";
+import {createNode} from "@skaar/ui/index";
+import {SkaarDOM} from "@skaar/ui/SkaarDOM";
+import {useEffect, useState} from "@skaar/ui/index";
 
 const UpdateCounter = () => {
     const [count, setCount] = useState(0);
@@ -36,6 +37,6 @@ const UpdateCounter = () => {
     return counters
 }
 
-window["SUI_DEBUG"] = true
+// window["SUI_DEBUG"] = true
 
 SkaarDOM.render(createNode(UpdateCounter, {}), document.getElementById('root'))

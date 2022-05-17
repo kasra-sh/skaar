@@ -1,6 +1,6 @@
-import {Component, createNode, SkaarDOM} from "../../index";
-import {JsObject} from "../../global";
-import {ComponentProps} from "../../src/component/Component";
+import {Component, createNode} from "@skaar/ui/index";
+import {SkaarDOM} from "@skaar/ui/SkaarDOM";
+import {JsObject} from "@skaar/ui/global";
 
 class UpdateCounter extends Component {
     state = {
@@ -12,11 +12,11 @@ class UpdateCounter extends Component {
         this.setState()
     }
 
-    onUpdate(props: ComponentProps) {
+    onUpdate(props) {
         this.setState({count: this.state.count + 1 / this.state.size})
     }
 
-    render(props: ComponentProps, state: JsObject): any {
+    render(props, state: JsObject): any {
         let counters = []
         for (let i = 0; i < 10; i++) {
             counters.push(

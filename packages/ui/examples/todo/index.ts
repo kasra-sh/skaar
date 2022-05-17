@@ -1,11 +1,12 @@
-import {Component, SkaarDOM} from "@skaar/ui/index";
-import {JsObject} from "@skaar/ui/global";
-import {ComponentProps} from "@skaar/ui/src/component/Component";
-import {h} from "@skaar/ui/src/h";
+import {Component, h} from "@skaar/ui/index";
+import {SkaarDOM} from "@skaar/ui/SkaarDOM";
+import {_div_, _ul_} from "@skaar/ui/h-tags";
+
 import {AddTodo} from "./components/addTodo";
 import {TodoItem} from "./components/todoItem";
-import {_div_, _ul_} from "@skaar/ui/h-tags";
 import {TodoStorage} from "./storage";
+
+import "./bootstrap-grid.css"
 
 class TodoApp extends Component {
     state = {
@@ -30,7 +31,7 @@ class TodoApp extends Component {
         })
     }
 
-    onUpdate(props: ComponentProps) {
+    onUpdate(props) {
         TodoStorage.items.set(this.state.todos)
         TodoStorage.idSeq.set(this.state.idSeq)
     }
@@ -57,7 +58,7 @@ class TodoApp extends Component {
         )
     }
 
-    render(props: ComponentProps, state: JsObject): any {
+    render(props, state): any {
         return [
             _div_({style: 'display: block; padding: 10px',}, [
                 h(AddTodo, {onAdd: this.onAddItem})
