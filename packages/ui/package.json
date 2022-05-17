@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test-watch": "jest --config=jest.config.js --watch",
     "dev": "parcel index.html",
     "bundle-cjs": "rollup -p node-resolve --format=cjs --dir=cjs -- index.js",
     "bundle-es5-1": "rollup -p node-resolve --format=iife --dir=es5 -- bundle-light.js && rollup -p node-resolve --format=iife --dir=es5 -- bundle-full.js",
@@ -29,13 +30,15 @@
     "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-node-resolve": "13.1.3",
+    "@types/jest": "27.4.1",
+    "@types/jsdom": "^16.2.14",
+    "babel-jest": "28.1.0",
+    "jest": "27.5.1",
     "jsdom": "19.0.0",
     "parcel": "2.4.0",
     "rollup": "2.70.1",
-    "jest": "27.5.1",
     "ts-jest": "27.1.4",
     "ts-node": "10.7.0",
-    "@types/jest": "27.4.1",
     "typescript": "^4.6.3"
   }
 }

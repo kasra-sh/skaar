@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "../",
+    "baseUrl": "../",
+    "paths" : {
+      "@skaar/ui/*": ["./*"]
+    }
+  },
+  "exclude": [
+    "../node_modules"
+  ]
+}

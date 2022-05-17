@@ -1,4 +1,4 @@
-import {createNode} from "./src/createNode.js"
+import {createNode} from "./src/createNode"
 import {VElement, VElementProps} from "./src/vnode/VElement";
 import {VNode} from "./src/vnode/VNode";
 import {Component, ComponentClass} from "./src/component/Component";
