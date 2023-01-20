@@ -1,2 +1,1 @@
-export type JsObject = Record<any, any>
-
+export type JsObject = Record<any, any>;

@@ -1,5 +1,5 @@
 export interface IViewNodeFactory<TextNodeType, ElementNodeType> {
-    createTextNode(text: string): TextNodeType
+   createTextNode(text: string): TextNodeType;
 
-    createElement(tag: string): ElementNodeType
+   createElement(tag: string): ElementNodeType;
 }

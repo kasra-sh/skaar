@@ -1,20 +1,17 @@
-import {JsObject} from "@skaar/ui/global";
+import { JsObject } from '@skaar/ui/global';
 
 export interface IComponentUpdater {
+   scheduleUpdate(component: any, partialState?: JsObject): void;
 
-    scheduleUpdate(component: any, partialState?: JsObject): void
-
-    updateNow(component: any, partialState?: JsObject): void
-
+   updateNow(component: any, partialState?: JsObject): void;
 }
 
 export const NoopUpdater = {
-    scheduleUpdate(component: any, partialState?: JsObject): void {
-        // throw Error("NoopUpdater method scheduleUpdate()")
-    },
+   scheduleUpdate(/*component: any, partialState?: JsObject*/): void {
+      // throw Error("NoopUpdater method scheduleUpdate()")
+   },
 
-    updateNow(component: any, partialState?: JsObject): void {
-        // throw Error("NoopUpdater method updateNow()")
-    }
-
-}
+   updateNow(/*component: any, partialState?: JsObject*/): void {
+      // throw Error("NoopUpdater method updateNow()")
+   },
+};

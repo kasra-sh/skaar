@@ -1,17 +1,15 @@
 {
-  "compilerOptions": {
-    "module": "CommonJS",
-    "target": "es5",
-    "sourceMap": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "@skaar/ui",
-//    "jsxImportSource": "../",
-    "baseUrl": "./",
-    "paths" : {
-      "@skaar/ui/*": ["./*"]
-    }
-  },
-  "exclude": [
-    "node_modules"
-  ]
+   "compilerOptions": {
+      "module": "CommonJS",
+      "target": "es5",
+      "sourceMap": true,
+      "jsx": "react-jsx",
+      "jsxImportSource": "@skaar/ui",
+      //    "jsxImportSource": "../",
+      "baseUrl": "./",
+      "paths": {
+         "@skaar/ui/*": ["./*"]
+      }
+   },
+   "exclude": ["node_modules"]
 }
