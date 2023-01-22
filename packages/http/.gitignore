@@ -118,3 +118,6 @@ out
 /package-lock.json
 /pnpm-lock.yaml
 .idea/
+/es5/
+/dist/
+/cjs/
