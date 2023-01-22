@@ -1,0 +1,21 @@
+{
+  "name": "skaar",
+  "version": "2.0.0",
+  "description": "Skaar mono-repo",
+  "main": "-",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasra-sh/skaar.git"
+  },
+  "author": "Kasra Shamsaei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kasra-sh/skaar/issues"
+  },
+  "homepage": "https://github.com/kasra-sh/skaar#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
