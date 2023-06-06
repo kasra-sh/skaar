@@ -16,14 +16,14 @@ export function reflect_getParentContextProviderState(ctxRef: any) {
 
 export function createContext(defaultValue: any) {
    const currentContextReference = {};
-   const providers = [];
+   // const providers = [];
    const Provider = createObjComponent({
       _name: 'ContextProvider',
       state: {
          value: defaultValue,
       },
       onCreate() {
-         providers.push(this);
+         // providers.push(this);
       },
       onUpdate(props) {
          if (this.state.value !== props) {
