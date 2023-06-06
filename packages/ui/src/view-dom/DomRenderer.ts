@@ -164,11 +164,11 @@ export class DomRenderer implements IViewRenderer, IComponentUpdater {
             viewNodes.push(rendered);
          }
       }
-      if (parentComponent) {
-         /*
-            Pass context
-             */
-      }
+      // if (parentComponent) {
+      //    /*
+      //       Pass context
+      //        */
+      // }
       component.__internal.mounted = true;
       return viewNodes;
    }
