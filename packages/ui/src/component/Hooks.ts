@@ -1,4 +1,5 @@
 import { FncContext, FnComponent } from './FnComponent';
+import { ContextObject, reflect_getParentContextProviderState } from '@skaar/ui/src/component/Context';
 
 export type UseStateTuple<T> = [t: T, setT: (newVal?: T) => void];
 
@@ -125,4 +126,9 @@ export function useCallback<T>(factory: () => () => T, deps?: Array<any>): () =>
  */
 export function useUnsafeThis(): FnComponent {
    return FncContext.current.component;
+}
+
+export function useContext<T>(context: ContextObject<T>): T {
+   const ctxState = reflect_getParentContextProviderState(useUnsafeThis(), context);
+   return ctxState as T;
 }

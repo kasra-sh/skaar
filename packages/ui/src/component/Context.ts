@@ -1,6 +1,5 @@
 import { createObjComponent } from './createComponent';
 import { Component } from '@skaar/ui/src/component/Component';
-import { useUnsafeThis } from '@skaar/ui/src/component/Hooks';
 
 export function reflect_getParentContextProvider(component: any, ctxRef: any) {
    let value = undefined;
@@ -20,8 +19,10 @@ export function reflect_getParentContextProviderState(component: any, ctxRef: an
    return reflect_getParentContextProvider(component, ctxRef).state.value;
 }
 
+export type ContextObject<T> = { Provider: Component; Consumer: Component };
+
 export function createContext<T>(defaultValue: T) {
-   const context: { Provider: Component; Consumer: Component } = {
+   const context: ContextObject<T> = {
       Provider: undefined,
       Consumer: undefined,
    };
@@ -60,9 +61,4 @@ export function createContext<T>(defaultValue: T) {
    });
 
    return context;
-}
-
-export function useContext<T>(context: object): T {
-   const ctxState = reflect_getParentContextProviderState(useUnsafeThis(), context);
-   return ctxState as T;
 }
