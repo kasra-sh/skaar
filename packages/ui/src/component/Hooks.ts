@@ -1,5 +1,6 @@
 import { FncContext, FnComponent } from './FnComponent';
 import { ContextObject, reflect_getParentContextProviderState } from '@skaar/ui/src/component/Context';
+import { RefType } from '@skaar/ui/src/view/Ref';
 
 export type UseStateTuple<T> = [t: T, setT: (newVal?: T) => void];
 
@@ -131,4 +132,11 @@ export function useUnsafeThis(): FnComponent {
 export function useContext<T>(context: ContextObject<T>): T {
    const ctxState = reflect_getParentContextProviderState(useUnsafeThis(), context);
    return ctxState as T;
+}
+
+export function useRef<T>(defaultValue: T | null | undefined): RefType<T> {
+   // get or initialize current hook node from current component
+   const currentHookNode = getOrInitHookNode({ current: defaultValue });
+
+   return currentHookNode.data;
 }
