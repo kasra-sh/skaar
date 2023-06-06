@@ -1,12 +1,14 @@
 import { createObjComponent } from './createComponent';
+import { Component } from '@skaar/ui/src/component/Component';
+import { useUnsafeThis } from '@skaar/ui/src/component/Hooks';
 
-export function reflect_getParentContextProviderState(ctxRef: any) {
+export function reflect_getParentContextProvider(component: any, ctxRef: any) {
    let value = undefined;
-   let parent = this._parent;
+   let parent = component._parent;
    while (parent) {
       const parentCtxRef = parent.__contextRef;
       if (parentCtxRef && parentCtxRef === ctxRef) {
-         value = parent.state.value;
+         value = parent;
          break;
       }
       parent = parent._parent;
@@ -14,16 +16,20 @@ export function reflect_getParentContextProviderState(ctxRef: any) {
    return value;
 }
 
-export function createContext(defaultValue: any) {
-   const currentContextReference = {};
-   // const providers = [];
-   const Provider = createObjComponent({
-      _name: 'ContextProvider',
+export function reflect_getParentContextProviderState(component: any, ctxRef: any) {
+   return reflect_getParentContextProvider(component, ctxRef).state.value;
+}
+
+export function createContext<T>(defaultValue: T) {
+   const context: { Provider: Component; Consumer: Component } = {
+      Provider: undefined,
+      Consumer: undefined,
+   };
+
+   context.Provider = createObjComponent({
+      _name: 'ContextProvider-' + new Date().getMilliseconds() + ((Math.random() * 1000) % 1000),
       state: {
          value: defaultValue,
-      },
-      onCreate() {
-         // providers.push(this);
       },
       onUpdate(props) {
          if (this.state.value !== props) {
@@ -32,18 +38,16 @@ export function createContext(defaultValue: any) {
             });
          }
       },
-      __contextRef: currentContextReference,
+      __contextRef: context,
       render(props) {
          return props.children;
       },
    });
-   const Consumer = createObjComponent({
+
+   context.Consumer = createObjComponent({
       _name: 'ContextConsumer',
-
-      onDestroy() {},
-
       render({ children }) {
-         const value = reflect_getParentContextProviderState(currentContextReference);
+         const value = reflect_getParentContextProviderState(this, context);
          children = children || [];
          const ch = [];
          for (let child of children) {
@@ -54,8 +58,11 @@ export function createContext(defaultValue: any) {
          return ch;
       },
    });
-   return {
-      Provider,
-      Consumer,
-   };
+
+   return context;
+}
+
+export function useContext<T>(context: object): T {
+   const ctxState = reflect_getParentContextProviderState(useUnsafeThis(), context);
+   return ctxState as T;
 }
