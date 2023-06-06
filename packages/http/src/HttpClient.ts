@@ -8,7 +8,7 @@ export type HttpRequestProps = {
    content?: Partial<HttpRequestContent>;
    headers?: Array<HttpHeader>;
    withCredentials?: boolean;
-   onUploadProgress?: (upload: XMLHttpRequestUpload) => void;
+   onUploadProgress?: (upload: ProgressEvent) => void;
 };
 
 export class HttpClient {
@@ -27,6 +27,10 @@ export class HttpClient {
       }
 
       xhr.withCredentials = request.withCredentials;
+
+      if (request.onUploadProgress) {
+         xhr.upload.onprogress = request.onUploadProgress;
+      }
 
       const promise = new Promise<any>((resolve, reject) => {
          xhr.onreadystatechange = function () {
